@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Logout - Railway Toilet Queries</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+            text-align: center;
+            margin-top: 100px;
+        }
+        .logout-message {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            display: inline-block;
+        }
+        .logout-message h1 {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+        .logout-message p {
+            font-size: 16px;
+            margin-bottom: 20px;
+        }
+        .logout-message button {
+            padding: 10px 20px;
+            background-color: #333;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+        .logout-message button:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+
+    <div class="logout-message">
+        <h1>You have been logged out</h1>
+        <p>Thank you for using the admin panel. You will be redirected shortly.</p>
+        <p>Click below if you are not redirected automatically.</p>
+        <button onclick="location.href='adminlogin.html';">Go to Login Page</button>
+    </div>
+
+    <script>
+        // Simulate session end by redirecting to login page after 3 seconds
+        setTimeout(function(){
+            window.location.href = 'adminlogin.html'; // Replace with the actual login page path
+        }, 3000);
+    </script>
+
+</body>
+</html>

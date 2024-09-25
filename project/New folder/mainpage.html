@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR Checker</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+        .container {
+            text-align: center;
+            border: 1px solid #821616;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+        }
+        input[type="text"] {
+            padding: 8px;
+            font-size: 16px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 15px;
+            font-size: 16px;
+        }
+        #result {
+            margin-top: 20px;
+        }
+        h1, h3 {
+            margin: 0 0 10px;
+        }
+        a {
+            text-decoration: none;
+        }
+        .buttons {
+            margin-top: 20px;
+        }
+        .buttons button {
+            margin: 5px;
+            padding: 10px;
+            font-size: 16px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <h1>Enter PNR Number</h1>
+        <input type="text" id="pnr" placeholder="Enter PNR Number">
+        <br><br>
+        <button onclick="checkPNR()">Submit</button>
+        <div id="result"></div>
+    </div>
+
+    <script>
+        // Dummy data for PNRs (equivalent to train_data in Flask app)
+        const trainData = [
+            {"name": "Ram", "pnr": 5, "train_name": "Rajdhani Express", "train_number": 122},
+            {"name": "Raj", "pnr": 6, "train_name": "Shatabdi Express", "train_number": 229},
+            {"name": "Arun", "pnr": 7, "train_name": "Duronto Express", "train_number": 130},
+        ];
+
+        function checkPNR() {
+            const pnrInput = document.getElementById('pnr').value;
+            const resultDiv = document.getElementById('result');
+            const pnr = parseInt(pnrInput, 10);  // Convert input to integer
+
+            const train = trainData.find(train => train.pnr === pnr); // Check for valid PNR
+
+            if (train) {
+                // If PNR is valid, show train details with buttons
+                resultDiv.innerHTML = `
+                    <center><h2>TRAIN DETAILS</h2></center>
+                    <h3>Train Name: ${train.train_name}</h3>
+                    <h3>PNR Number: ${train.pnr}</h3>
+                    <h3>Train Number: ${train.train_number}</h3>
+                    <center class="buttons">
+                        <a href="C:/Users/Shrinidhi/Desktop/project/helpnew2.html" target="_blank">
+                            <button>HELP</button>
+                        </a>
+                        <a href="C:/Users/Shrinidhi/Desktop/project/call.html" target="_blank">
+                            <button>EMERGENCY CALL</button>
+                        </a>
+                    </center>
+                `;
+            } else {
+                // If PNR is invalid, show error message
+                resultDiv.innerHTML = '<h1 style="color:red;">SORRY INVALID PNR NUMBER</h1>';
+            }
+        }
+    </script>
+</body>
+</html>

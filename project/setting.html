@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Settings</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f9;
+        }
+        .sidebar {
+            width: 250px;
+            height: 100vh;
+            background-color: #333;
+            color: #fff;
+            position: fixed;
+            top: 0;
+            left: 0;
+            padding: 20px;
+        }
+        .sidebar h2 {
+            margin-bottom: 20px;
+            text-align: center;
+            font-size: 22px;
+        }
+        .sidebar ul {
+            list-style: none;
+        }
+        .sidebar ul li {
+            padding: 15px;
+            text-align: left;
+        }
+        .sidebar ul li a {
+            color: #fff;
+            text-decoration: none;
+            font-size: 18px;
+        }
+        .sidebar ul li:hover {
+            background-color: #575757;
+        }
+        .main-content {
+            margin-left: 250px;
+            padding: 20px;
+        }
+        .header {
+            background-color: #fff;
+            padding: 20px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+            margin-bottom: 20px;
+        }
+        .header h1 {
+            font-size: 24px;
+        }
+        .settings-form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0px 1px 5px rgba(0, 0, 0, 0.1);
+        }
+        .settings-form label {
+            display: block;
+            margin-bottom: 10px;
+            font-weight: bold;
+        }
+        .settings-form input[type="text"],
+        .settings-form input[type="email"],
+        .settings-form input[type="password"],
+        .settings-form select {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            border: 1px solid #ddd;
+        }
+        .settings-form input[type="submit"] {
+            background-color: #333;
+            color: #fff;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+        .settings-form input[type="submit"]:hover {
+            background-color: #575757;
+        }
+    </style>
+</head>
+<body>
+    <div class="sidebar">
+        <h2>Admin Panel</h2>
+        <ul>
+            <li><a href="C:\Users\Shrinidhi\Desktop\project\adminNew.html">Dashboard</a></li>
+            <li><a href="#">Users</a></li>
+            <li><a href="setting.html">Settings</a></li>
+            <li><a href="C:\Users\Shrinidhi\Desktop\project\adminNew.html">Reports</a></li>
+            <li><a href="C:\Users\Shrinidhi\Desktop\project\logout.html">Logout</a></li>
+        </ul>
+    </div>
+
+    <div class="main-content">
+        <div class="header">
+            <h1>Admin Settings</h1>
+        </div>
+
+        <div class="settings-form">
+            <h2>Account Settings</h2>
+
+            <form action="submit_settings.php" method="POST">
+                <label for="username">Username:</label>
+                <input type="text" id="username" name="username" value="admin" required>
+
+                <label for="email">Email:</label>
+                <input type="email" id="email" name="email" value="admin@example.com" required>
+
+                <label for="password">Password:</label>
+                <input type="password" id="password" name="password" placeholder="New Password">
+
+                <label for="role">User Role:</label>
+                <select id="role" name="role">
+                    <option value="admin" selected>Admin</option>
+                    <option value="editor">Editor</option>
+                    <option value="viewer">Viewer</option>
+                </select>
+
+                <input type="submit" value="Update Settings">
+            </form>
+        </div>
+    </div>
+</body>
+</html>

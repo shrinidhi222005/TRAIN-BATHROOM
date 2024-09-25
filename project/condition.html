@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PNR Checker</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 20px;
+        }
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Check Your PNR Number</h1>
+    <input type="text" id="pnrInput" placeholder="Enter PNR number">
+    <button onclick="checkPNR()">SUBMIT</button>
+
+    <div id="message" class="hidden"></div>
+
+    <script>
+        function checkPNR() {
+            const validPNRs = ['1234567890', '0987654321']; // Example valid PNRs
+            const pnrInput = document.getElementById('pnrInput').value;
+            const messageDiv = document.getElementById('message');
+
+            if (validPNRs.includes(pnrInput)) {
+                // Redirect to detail page
+                window.location.href = 'details.html'; // Change this to your detail page URL
+            } else {
+                // Show invalid PNR message
+                messageDiv.textContent = 'Invalid PNR Number. Please ensure you entered it correctly.';
+                messageDiv.classList.remove('hidden');
+            }
+        }
+    </script>
+
+</body>
+</html>
